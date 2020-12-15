@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Welcome to A-Frame! www.therke.com</title>
+    <meta name="description" content="www.therke.com A-Frame tutorials, a basic scene">
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+</head>
+
+<body>
+    <a-scene>
+        <a-sky color="black"></a-sky>
+        
+        <a-entity oculus-touch-controls="hand: left"></a-entity>
+        <a-entity oculus-touch-controls="hand: right"></a-entity>
+        
+        <a-entity Llaser-controls="hand: left"></a-entity>
+        <a-entity Rlaser-controls="hand: right"></a-entity>
+        
+        <a-entity Llaser-controls line="color: blue; opacity: 0.75"></a-entity>
+        <a-entity Rlaser-controls line="color: red; opacity: 0.75"></a-entity>
+        
+        <a-text value="Welcome!" position="-1.25 1.5 -3" rotation="0 12 0" color="violet" shadow></a-text>
+        <a-text value="In development!" position="-0.15 1.15 -1.595" color="red" scale="0.25 0.25 0.25" shadow></a-text>
+        <a-text value="Find the source code on github at: https://github.com/danielcharlesforeman/theRKE.com" position="-0.23 1.09 -1.58" color="black" scale="0.11 0.11 0.11" shadow></a-text>
+        <a-text value="To the Random Knowledge Enthusiast" position="-1.55 1.15 -3" rotation="0 12 0" color="deepskyblue" shadow></a-text>
+        
+        <a-gltf-model src="assets/Room.glb" shadow="cast:true; receive:true"></a-gltf-model>
+        <a-gltf-model src="assets/kenney.nl/furnatureKit/desk.glb" scale="1.5 1.5 1.5" position="-0.5 0.15 -1.26" shadow="cast:true; receive:true"></a-gltf-model>
+        <a-gltf-model src="assets/kenney.nl/furnatureKit/chairDesk.glb" scale="1.5 1.5 1.5" rotation="0 -142 0" position="0.35 0.15 -1.2" shadow="cast:true; receive:true"></a-gltf-model>
+        <a-gltf-model src="assets/kenney.nl/furnatureKit/computerKeyboard.glb" scale="1.5 1.5 1.5" rotation="0 0 0" position="-0.185 0.75 -1.27" shadow="cast:true; receive:true"></a-gltf-model>
+        <a-gltf-model src="assets/kenney.nl/furnatureKit/computerMouse.glb" scale="1.5 1.5 1.5" rotation="0 0 0" position="0.35 0.75 -1.25" shadow="cast:true; receive:true"></a-gltf-model>
+        <a-gltf-model src="assets/kenney.nl/furnatureKit/computerScreen.glb" scale="1.5 1.5 1.5" rotation="0 0 0" position="-0.25 0.75 -1.5" shadow="cast:true; receive:true"></a-gltf-model>
+        
+        
+        
+        <a-gltf-model src="assets/kenney.nl/furnatureKit/desk.glb" scale="1.5 1.5 1.5" rotation="0 -90 0" position="1.27 0.15 -0.2" shadow="cast:true; receive:true"></a-gltf-model>
+        <a-gltf-model src="assets/kenney.nl/furnatureKit/desk.glb" scale="1.5 1.5 1.5" rotation="0 90 0" position="-1.27 0.15 1.75" shadow="cast:true; receive:true"></a-gltf-model>
+        <a-light color="white" position="0 2.2 0" type="point"></a-light>
+        
+        <a-plane position="0 0 -4" rotation="-90 0 0" width="40" height="40" color="#7BC8A4" shadow="cast:true; receive:true"></a-plane>
+        
+    </a-scene>
+</body>
+
+</html>
