@@ -6,11 +6,15 @@
     <title>Welcome to A-Frame! www.therke.com</title>
     <meta name="description" content="www.therke.com A-Frame tutorials, a basic scene">
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
 </head>
 
 <body>
+    
+    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@therke.com/video/6906593091529100546" data-video-id="6906593091529100546" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@therke.com" href="https://www.tiktok.com/@therke.com">@therke.com</a> <p><a title="learnontiktok" target="_blank" href="https://www.tiktok.com/tag/learnontiktok">##learnontiktok</a> 48 minutes of <a title="coding" target="_blank" href="https://www.tiktok.com/tag/coding">##coding</a> to create a simple <a title="vr" target="_blank" href="https://www.tiktok.com/tag/vr">##vr</a> <a title="website" target="_blank" href="https://www.tiktok.com/tag/website">##website</a> <a title="websitedesign" target="_blank" href="https://www.tiktok.com/tag/websitedesign">##websitedesign</a> <a title="learncoding" target="_blank" href="https://www.tiktok.com/tag/learncoding">##learncoding</a> <a title="pc" target="_blank" href="https://www.tiktok.com/tag/pc">##pc</a> <a title="game" target="_blank" href="https://www.tiktok.com/tag/game">##game</a> <a title="vrgaming" target="_blank" href="https://www.tiktok.com/tag/vrgaming">##vrgaming</a> <a title="vrgame" target="_blank" href="https://www.tiktok.com/tag/vrgame">##vrgame</a></p> <a target="_blank" title="♬ Hold On - Extreme Music" href="https://www.tiktok.com/music/Hold-On-6827289795509618689">♬ Hold On - Extreme Music</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
+    
     <a-scene>
-        <a-sky color="black"></a-sky>
+        <a-sky color="deepskyblue"></a-sky>
         
         <a-entity oculus-touch-controls="hand: left"></a-entity>
         <a-entity oculus-touch-controls="hand: right"></a-entity>
@@ -21,12 +25,18 @@
         <a-entity Llaser-controls line="color: blue; opacity: 0.75"></a-entity>
         <a-entity Rlaser-controls line="color: red; opacity: 0.75"></a-entity>
         
+        <a-light color="white" intensity="0.5" position="0 2.2 0" type="hemisphere"></a-light>
+        
+        <a-gltf-model src="assets/Mountains.glb" position="-75 -25 -260" rotation="0 270 0"></a-gltf-model>
+        
+        
         <a-text value="Welcome!" position="-1.25 1.5 -3" rotation="0 12 0" color="violet" shadow></a-text>
         <a-text value="In development!" position="-0.15 1.15 -1.595" color="red" scale="0.25 0.25 0.25" shadow></a-text>
         <a-text value="Find the source code on github at: https://github.com/danielcharlesforeman/theRKE.com" position="-0.23 1.09 -1.58" color="black" scale="0.11 0.11 0.11" shadow></a-text>
         <a-text value="To the Random Knowledge Enthusiast" position="-1.55 1.15 -3" rotation="0 12 0" color="deepskyblue" shadow></a-text>
         
         <a-gltf-model src="assets/Room.glb" shadow="cast:true; receive:true"></a-gltf-model>
+        
         <a-gltf-model src="assets/kenney.nl/furnatureKit/desk.glb" scale="1.5 1.5 1.5" position="-0.5 0.15 -1.26" shadow="cast:true; receive:true"></a-gltf-model>
         <a-gltf-model src="assets/kenney.nl/furnatureKit/chairDesk.glb" scale="1.5 1.5 1.5" rotation="0 -142 0" position="0.35 0.15 -1.2" shadow="cast:true; receive:true"></a-gltf-model>
         <a-gltf-model src="assets/kenney.nl/furnatureKit/computerKeyboard.glb" scale="1.5 1.5 1.5" rotation="0 0 0" position="-0.185 0.75 -1.27" shadow="cast:true; receive:true"></a-gltf-model>
@@ -37,9 +47,9 @@
         
         <a-gltf-model src="assets/kenney.nl/furnatureKit/desk.glb" scale="1.5 1.5 1.5" rotation="0 -90 0" position="1.27 0.15 -0.2" shadow="cast:true; receive:true"></a-gltf-model>
         <a-gltf-model src="assets/kenney.nl/furnatureKit/desk.glb" scale="1.5 1.5 1.5" rotation="0 90 0" position="-1.27 0.15 1.75" shadow="cast:true; receive:true"></a-gltf-model>
-        <a-light color="white" position="0 2.2 0" type="point"></a-light>
+        <a-light color="white" intensity="0.5" position="0 2.2 0" type="point"></a-light>
         
-        <a-plane position="0 0 -4" rotation="-90 0 0" width="40" height="40" color="#7BC8A4" shadow="cast:true; receive:true"></a-plane>
+        <a-entity position="0 2.5 -60" particle-system="preset: snow; particleCount: 550"></a-entity>s
         
     </a-scene>
 </body>
