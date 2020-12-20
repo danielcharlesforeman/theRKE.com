@@ -15,12 +15,12 @@
 
 <body>
 
-    <a-scene shadow="enabled: true">
+    <a-scene shadow="type: pcfsoft">
 
         <a-assets>
 
             <img id="sky" src="assets/sky.jpg">
-
+         
         </a-assets>
 
         <a-sky src="#sky"></a-sky>
@@ -35,6 +35,7 @@
 
         <a-entity light="type:ambient; intensity: 0.3" position="0 1.5 0"></a-entity>
         <a-entity light="type:point; castShadow:true; intensity: 0.7" position="0 1.5 0"></a-entity>
+        <!--<a-entity light="type:point; castShadow:true; intensity: 0.5" position="0.46 1 -1.65" rotation="-90 0 0"></a-entity>-->
         
         <a-gltf-model src="assets/Mountains.glb" position="-75 -25 -260" rotation="0 270 0"></a-gltf-model>
 
@@ -53,7 +54,7 @@
         <a-gltf-model hoverable grabbable stretchable draggable dropppable src="assets/kenney.nl/furnatureKit/computerKeyboard.glb" shadow scale="1.5 1.5 1.5" rotation="0 0 0" position="-0.185 0.75 -1.27" class="interactive"></a-gltf-model>
         <a-gltf-model hoverable grabbable stretchable draggable dropppable src="assets/kenney.nl/furnatureKit/computerMouse.glb" shadow scale="1.5 1.5 1.5" rotation="0 0 0" position="0.35 0.75 -1.25" class="interactive"></a-gltf-model>
         <a-gltf-model src="assets/kenney.nl/furnatureKit/lampSquareTable.glb" shadow rotation="0 0 0" position="0.40 0.75 -1.6" class="interactive"></a-gltf-model>
-        <a-entity light="type:point; castShadow:true; intensity: 0.5" position="0.46 1 -1.65" rotation="-90 0 0"></a-entity>
+        
         <a-gltf-model src="assets/kenney.nl/furnatureKit/computerScreen.glb" scale="1.5 1.5 1.5" rotation="0 0 0" shadow position="-0.25 0.75 -1.5"></a-gltf-model>
 
         <a-gltf-model src="assets/kenney.nl/furnatureKit/desk.glb" scale="1.5 1.5 1.5" rotation="0 -90 0" shadow position="1.27 0.15 -0.2"></a-gltf-model>
@@ -71,12 +72,11 @@
         <a-gltf-model src="assets/SpaceSemiSphere.glb" scale="1.5 1.5 1.5" rotation="0 90 0" position="1.27 0.15 -0.2"></a-gltf-model>
         <a-gltf-model hoverable grabbable stretchable draggable dropppable shadow src="assets/Hubble.glb" scale="0.05 0.05 0.05" rotation="90 0 0" position="0 1.75 2.2" class="interactive"></a-gltf-model>
 
-        <!--<a-gltf-model src="assets/Room.glb" shadow></a-gltf-model>-->
-
         <a-entity>
             <a-plane rotation="0 0 0" position="0 0.5 -2" scale="4 1" color="navy" shadow></a-plane>
             <a-plane rotation="0 0 0" position="0 2.25 -2" scale="4 0.5" color="navy" shadow></a-plane>
             <a-plane rotation="0 0 0" position="0 1.5 -2" scale="2 1 1" src="assets/glass.png" transparent="true" alpha-test="0.47"></a-plane>
+            <a-entity position="0 1.5 -2" sound="src: url(assets/audio/outside.mp3); autoplay: true; loop: true;"></a-entity>
             <a-plane rotation="0 0 0" position="-1.5 1.5 -2" scale="1 1" color="navy" shadow></a-plane>
             <a-plane rotation="0 0 0" position="1.5 1.5 -2" scale="1 1" color="navy"shadow></a-plane>
         </a-entity>
@@ -98,19 +98,19 @@
         </a-entity>
         
         <a-entity>
-            <a-plane rotation="-90 0 0" position="0 0.15 0" scale="4 4" shadow src="assets/Floor.jpg" repeat="8 8 "></a-plane>
-            <a-plane rotation="-90 0 90" position="0 0.155 1.25" scale="1 1.5" shadow src="assets/Rug.jpg"></a-plane>
-            <a-plane rotation="90 0 0" position="0 2.5 0" scale="4 4"  normalMap="assets/Ceiling%20Normal%20Map.jpg" src="assets/Ceiling.jpg" repeat="4 4" roughness="1" shadow></a-plane>
-            <a-box scale="4 0.25 0.01" position="0 0.15 2" shadow></a-box>
-            <a-box scale="4 0.25 0.01" position="0 0.15 -2" shadow></a-box>
-            <a-box scale="0.01 0.25 4" position="2 0.15 0" shadow></a-box>
-            <a-box scale="0.01 0.25 4" position="-2 0.15 0" shadow></a-box>
+            <a-plane rotation="-90 0 0" position="0 0.15 0" scale="4 4" shadow="receive: true; cast: false;" src="assets/Floor.jpg" repeat="8 8 "></a-plane>
+            <a-plane rotation="-90 0 90" position="0 0.155 1.25" scale="1 1.5" shadow="receive: true; cast: false;" src="assets/Rug.jpg"></a-plane>
+            <a-plane rotation="90 0 0" position="0 2.5 0" scale="4 4" src="assets/Ceiling.jpg" repeat="4 4" roughness="1" shadow></a-plane>
+            <a-box scale="4 0.25 0.01" position="0 0.15 2" shadow="receive: true; cast: false;"></a-box>
+            <a-box scale="4 0.25 0.01" position="0 0.15 -2" shadow="receive: true; cast: false;"></a-box>
+            <a-box scale="0.01 0.25 4" position="2 0.15 0" shadow="receive: true; cast: false;"></a-box>
+            <a-box scale="0.01 0.25 4" position="-2 0.15 0" shadow="receive: true; cast: false;"></a-box>
         </a-entity>
         
         <a-entity>
-            <a-plane rotation="0 0 0" position="1.5 0.35 -1.99" scale="0.25 0.125" src="assets/doublesocket.jpg" shadow></a-plane>
-            <a-plane rotation="0 -90 0" position="1.99 0.35 1.5" scale="0.25 0.125" src="assets/doublesocket.jpg" shadow></a-plane>
-            <a-plane rotation="0 90 0" position="-1.99 0.35 0.5" scale="0.25 0.125" src="assets/doublesocket.jpg" shadow></a-plane>
+            <a-plane rotation="0 0 0" position="1.5 0.35 -1.99" scale="0.25 0.125" src="assets/doublesocket.jpg" shadow="receive: true; cast: false;"></a-plane>
+            <a-plane rotation="0 -90 0" position="1.99 0.35 1.5" scale="0.25 0.125" src="assets/doublesocket.jpg" shadow="receive: true; cast: false;"></a-plane>
+            <a-plane rotation="0 90 0" position="-1.99 0.35 0.5" scale="0.25 0.125" src="assets/doublesocket.jpg" shadow="receive: true; cast: false;"></a-plane>
         </a-entity>
 
     </a-scene>
