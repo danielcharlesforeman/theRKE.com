@@ -80,10 +80,8 @@ gameScene.create = function () {
     this.robot5.setScale(0.5, 0.5);
     this.robot5.setFlip(true, false);
     this.robot5.direction = 'up';
-    
-    
-
 }
+
 //Update
 gameScene.update = function () {
 
